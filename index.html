@@ -3,27 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HNK Test</title>
+<title>HNK Stores</title>
 
 <style>
+/* ===== BASIC RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
 }
 
+/* ===== HERO SECTION ===== */
 header {
   min-height: 100vh;
+  min-height: 100svh; /* mobile fix */
+
   background-image:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("1.jpg.jpg");
+
   background-size: cover;
-  background-position: center;
+  background-position: center top; /* image fixed */
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  padding: 20px;
+}
+
+/* ===== TEXT ===== */
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 6px;
+  margin-bottom: 15px;
+  color: #e6c87b;
+}
+
+header p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+/* ===== BUTTON ===== */
+.cta {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #25D366;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.3rem;
+    letter-spacing: 4px;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
 }
 </style>
 </head>
@@ -33,7 +86,14 @@ header {
 <header>
   <div>
     <h1>HNK STORES</h1>
-    <p>Testing background image and text</p>
+    <p>
+      Welcome to HNK Stores — premium watches crafted for daily style
+      and timeless elegance.
+    </p>
+
+    <a class="cta" href="https://wa.me/923435266919" target="_blank">
+      Order on WhatsApp
+    </a>
   </div>
 </header>
 
