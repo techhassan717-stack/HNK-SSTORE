@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HNK Stores | Luxury Watches</title>
+<title>HNK Stores | Watches & Perfumes</title>
 
 <style>
 *{box-sizing:border-box;}
@@ -20,19 +20,17 @@ body{
 header{
   position:relative;
   height:100vh;
-  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  overflow:hidden;
 }
 
-/* SLIDER (DESKTOP ONLY) */
+/* Desktop background slider */
 .header-slider{
   position:absolute;
-  top:0; left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   z-index:-1;
 }
 
@@ -42,18 +40,13 @@ header{
   height:100%;
   object-fit:cover;
   opacity:0;
-  animation:slideFade 10s infinite;
+  animation:slide 10s infinite;
 }
 
-.header-slider img:nth-child(1){
-  animation-delay:0s;
-}
+.header-slider img:nth-child(1){animation-delay:0s;}
+.header-slider img:nth-child(2){animation-delay:5s;}
 
-.header-slider img:nth-child(2){
-  animation-delay:5s;
-}
-
-@keyframes slideFade{
+@keyframes slide{
   0%{opacity:0;}
   10%{opacity:1;}
   45%{opacity:1;}
@@ -61,11 +54,10 @@ header{
   100%{opacity:0;}
 }
 
-/* HEADER CONTENT */
 .header-content{
-  background:rgba(0,0,0,0.55);
-  padding:50px 30px;
-  border-radius:20px;
+  background:rgba(0,0,0,.6);
+  padding:55px 35px;
+  border-radius:22px;
 }
 
 header h1{
@@ -99,15 +91,15 @@ header p{
 /* ================= SECTIONS ================= */
 
 section{
-  padding:80px 20px;
+  padding:90px 20px;
   max-width:1200px;
   margin:auto;
 }
 
 .section-title{
   text-align:center;
-  font-size:2.4rem;
-  margin-bottom:45px;
+  font-size:2.5rem;
+  margin-bottom:50px;
   letter-spacing:3px;
   background:linear-gradient(90deg,#e6c87b,#bfa14a,#fff);
   -webkit-background-clip:text;
@@ -117,21 +109,22 @@ section{
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:35px;
 }
 
 .product{
   background:#fff;
   color:#000;
   border-radius:22px;
-  padding:22px;
-  box-shadow:0 18px 40px rgba(0,0,0,0.25);
+  padding:25px;
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
   text-align:center;
 }
 
 .product img{
   width:100%;
   border-radius:15px;
+  margin-bottom:18px;
 }
 
 .price{
@@ -142,8 +135,7 @@ section{
 
 .order-btn{
   display:inline-block;
-  margin-top:10px;
-  padding:12px 24px;
+  padding:12px 26px;
   background:#25D366;
   color:#000;
   text-decoration:none;
@@ -151,44 +143,41 @@ section{
   font-weight:bold;
 }
 
-.about,.policy{
+/* ================= PERFUME COMING SOON ================= */
+
+.coming-soon{
   text-align:center;
-  line-height:1.9;
+  font-size:2.8rem;
+  font-weight:800;
+  background:linear-gradient(90deg,#9fd3c7,#e6c87b,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
   background:#000;
-  padding:30px 20px;
+  padding:35px 20px;
   text-align:center;
   color:#bfa14a;
-  font-size:.95rem;
 }
 
-/* ================= MOBILE MODE ================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:768px){
-
   header{
-    height:90vh;
     background:
       linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
       url("Black Gold Elegant Luxury Watch Shop Logo.jpg")
       center/contain no-repeat;
   }
 
-  .header-slider{
-    display:none;
-  }
+  .header-slider{display:none;}
 
   header h1{
     font-size:2.4rem;
     letter-spacing:4px;
-  }
-
-  .header-content{
-    padding:35px 20px;
   }
 }
 </style>
@@ -197,20 +186,16 @@ footer{
 <body>
 
 <header>
-
-  <!-- DESKTOP SLIDER BACKGROUNDS -->
   <div class="header-slider">
-    <img src="BG.jpg" alt="HNK Background 1">
-    <img src="1.jpg.jpg" alt="HNK Background 2">
+    <img src="BG.jpg">
+    <img src="1.jpg.jpg">
   </div>
 
-  <!-- HEADER TEXT -->
   <div class="header-content">
     <h1>HNK STORES</h1>
-
     <p>
-      Luxury watches designed for daily styling and timeless elegance.
-      Precision, class, and confidence — only at HNK Stores.
+      Premium daily styling and luxury watches crafted for elegance,
+      confidence, and timeless appeal.
     </p>
 
     <p style="margin-top:18px;letter-spacing:3px;color:#e6c87b;">
@@ -221,24 +206,49 @@ footer{
       Order on WhatsApp
     </a>
   </div>
-
 </header>
 
-<section class="about">
-<h2 class="section-title">About HNK Stores</h2>
-<p>
-We operate on confirmed orders only.
-Each product is sourced with premium quality checks.
-</p>
+<!-- DAILY STYLING WATCHES -->
+<section>
+<h2 class="section-title">Daily Styling Watches</h2>
+
+<div class="products">
+  <div class="product">
+    <img src="daily-watch.jpg">
+    <h3>Minimal Everyday Watch</h3>
+    <p><strong>Product Code:</strong> HNK-DW-001</p>
+    <div class="price">PKR 3,500 – 6,000</div>
+    <a class="order-btn"
+       href="https://wa.me/923435266919?text=Order%20HNK-DW-001"
+       target="_blank">Order on WhatsApp</a>
+  </div>
+</div>
 </section>
 
-<section class="policy">
-<h2 class="section-title">Payment & Support</h2>
-<p>
-Delivery charges paid in advance.<br>
-Order confirmation via WhatsApp.<br><br>
-Support: <strong>h123kayani1@gmail.com</strong>
-</p>
+<!-- LUXURY WATCHES -->
+<section>
+<h2 class="section-title">Luxury Watches</h2>
+
+<div class="products">
+  <div class="product">
+    <img src="luxury-watch.jpg">
+    <h3>Classic Gold Dial Luxury Watch</h3>
+    <p><strong>Product Code:</strong> HNK-LX-001</p>
+    <div class="price">PKR 12,000 – 25,000</div>
+    <a class="order-btn"
+       href="https://wa.me/923435266919?text=Order%20HNK-LX-001"
+       target="_blank">Order on WhatsApp</a>
+  </div>
+</div>
+</section>
+
+<!-- PERFUMES -->
+<section>
+<h2 class="section-title">Perfumes</h2>
+<div class="coming-soon">
+  COMING SOON<br>
+  <span style="font-size:1.3rem;">Launching Soon</span>
+</div>
 </section>
 
 <footer>
@@ -247,4 +257,5 @@ Support: <strong>h123kayani1@gmail.com</strong>
 
 </body>
 </html>
+
 
