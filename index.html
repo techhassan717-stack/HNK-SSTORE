@@ -23,13 +23,12 @@ header {
   min-height: 100vh;
   min-height: 100svh;
 
-  /* 💻 LAPTOP IMAGE */
   background-image:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("1.jpg.jpg");
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("Black Gold Elegant Luxury Watch Shop Logo.jpg");
 
-  background-size: cover;
-  background-position: center top;
+  background-size: contain; /* SHOW FULL IMAGE */
+  background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
@@ -38,18 +37,6 @@ header {
   text-align: center;
 
   padding: 20px;
-}
-
-/* 📱 MOBILE IMAGE */
-@media (max-width: 768px) {
-  header {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-      url("WhatsApp Image 2025-12-30 at 2.16.28 PM.jpeg");
-
-    background-size: cover;
-    background-position: center top;
-  }
 }
 
 /* ===== TEXT ===== */
@@ -80,7 +67,7 @@ header p {
   font-weight: bold;
 }
 
-/* ===== MOBILE TEXT ADJUST ===== */
+/* ===== MOBILE TEXT FIX ===== */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.2rem;
