@@ -162,12 +162,33 @@ section{
   text-align:center;
 }
 
-.product img,
-.product video{
-  width:100%;
+/* ================= SWIPE SLIDER (NEW) ================= */
+
+.swipe-slider{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  gap:10px;
   border-radius:15px;
   margin-bottom:18px;
 }
+
+.swipe-slider::-webkit-scrollbar{
+  display:none;
+}
+
+.swipe-slide{
+  min-width:100%;
+  scroll-snap-align:center;
+}
+
+.swipe-slide img,
+.swipe-slide video{
+  width:100%;
+  border-radius:15px;
+}
+
+/* ================= PRICES ================= */
 
 .price{
   color:#bfa14a;
@@ -247,13 +268,8 @@ footer{
       url("Black Gold Elegant Luxury Watch Shop Logo.jpg")
       center/cover no-repeat;
   }
-
   .header-slider{display:none;}
-
-  header h1{
-    font-size:2.4rem;
-    letter-spacing:4px;
-  }
+  header h1{font-size:2.4rem;}
 }
 </style>
 </head>
@@ -261,12 +277,8 @@ footer{
 <body>
 
 <header>
-  <div class="confetti"></div>
-  <div class="confetti"></div>
-  <div class="confetti"></div>
-  <div class="confetti"></div>
-  <div class="confetti"></div>
-  <div class="confetti"></div>
+  <div class="confetti"></div><div class="confetti"></div><div class="confetti"></div>
+  <div class="confetti"></div><div class="confetti"></div><div class="confetti"></div>
 
   <div class="header-slider">
     <img src="BG.jpg">
@@ -277,14 +289,7 @@ footer{
     <div class="welcome">WELCOME TO HNK SSTORE</div>
     <h1>HNK SSTORE</h1>
     <div class="launch-badge">🎉 Successfully Launched</div>
-    <p>
-      We are proud to announce that HNK SSTORE is now officially live.
-      Our products are available and ready to be delivered across Pakistan.
-      Thank you for trusting us — your style journey starts here.
-    </p>
-    <p style="margin-top:15px;color:#e6c87b;letter-spacing:2px;">
-      Products Available • Nationwide Delivery • Trusted Quality
-    </p>
+    <p>Products Available • Nationwide Delivery • Trusted Quality</p>
   </div>
 </header>
 
@@ -296,7 +301,6 @@ footer{
   <div class="product">
     <img src="AURA FOR KIDS.jfif">
     <h3>Aura Watch – White</h3>
-    <p><strong>Lightweight Kids Watch</strong></p>
     <p><strong>Product Code:</strong> HNK-AURA-001</p>
     <div class="price">PKR 600</div>
     <a class="order-btn" href="https://wa.me/923435266919" target="_blank">Order on WhatsApp</a>
@@ -305,8 +309,6 @@ footer{
   <div class="product">
     <img src="AURA WATCH ORIGNAL BLACK.webp">
     <h3>Arabic Aura Watch Original Black</h3>
-    <p>High quality watch • 142g weight</p>
-    <p>No compromise on quality</p>
     <p><strong>Product Code:</strong> HNK-AURA-002</p>
     <div class="price">PKR 2,500</div>
     <a class="order-btn" href="https://wa.me/923435266919" target="_blank">Order on WhatsApp</a>
@@ -327,15 +329,17 @@ footer{
     <a class="order-btn" href="https://wa.me/923435266919" target="_blank">Order on WhatsApp</a>
   </div>
 
-  <!-- NEW PRODUCT ADDED -->
+  <!-- NEW SWIPE PRODUCT -->
   <div class="product">
-    <img src="WATCH PPG.jpg">
-    <img src="PPG 02.jpg">
-    <img src="PPG BOX.jpg">
 
-    <video controls>
-      <source src="PPG VID.MP4" type="video/mp4">
-    </video>
+    <div class="swipe-slider">
+      <div class="swipe-slide"><img src="WATCH PPG.jpg"></div>
+      <div class="swipe-slide"><img src="PPG 02.jpg"></div>
+      <div class="swipe-slide"><img src="PPG BOX.jpg"></div>
+      <div class="swipe-slide">
+        <video controls src="PPG VID.MP4"></video>
+      </div>
+    </div>
 
     <h3>Premium PPG Luxury Watch</h3>
     <p><strong>Product Code:</strong> HNK-LX-002</p>
@@ -361,11 +365,7 @@ footer{
 
 <footer>
 © 2026 <strong>HNK SSTORE</strong><br>
-WhatsApp: +92 343 5266919 • Instagram: @hnk_sstore<br><br>
-<strong>Delivery Policy:</strong><br>
-Delivery available all over Pakistan.<br>
-Delivery fee is paid in advance.<br>
-Remaining payment is collected on delivery.
+WhatsApp: +92 343 5266919 • Instagram: @hnk_sstore
 </footer>
 
 <div class="floating-icons">
@@ -375,3 +375,4 @@ Remaining payment is collected on delivery.
 
 </body>
 </html>
+
