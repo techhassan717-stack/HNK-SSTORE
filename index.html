@@ -115,12 +115,23 @@ section{
   box-shadow:0 18px 40px rgba(0,0,0,.25);
 }
 
-.product img{
+/* ===== UNIVERSAL MEDIA FRAME ===== */
+.media-frame{
   width:100%;
-  max-height:260px;
-  object-fit:contain;
+  aspect-ratio:1/1;
+  background:#000;
   border-radius:15px;
+  overflow:hidden;
 }
+
+.media-frame img,
+.media-frame video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* ================= PRICE / BUTTON ================= */
 
 .price{
   color:#bfa14a;
@@ -157,12 +168,14 @@ section{
   scroll-snap-align:center;
 }
 
-.luxury-slide img{
-  width:100%;
-  max-height:260px;
-  object-fit:contain;
-  border-radius:15px;
-  background:#000;
+/* ===== SIDE BY SIDE LAST IMAGES ===== */
+.dual-images{
+  display:flex;
+  gap:10px;
+}
+
+.dual-images .media-frame{
+  flex:1;
 }
 
 /* ================= PERFUME ================= */
@@ -238,37 +251,32 @@ footer{
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-bg"></div>
   <div class="header-overlay"></div>
-
   <div class="header-content">
     <div class="welcome">WELCOME TO HNK SSTORE</div>
     <h1>HNK SSTORE</h1>
     <div class="launch">🎉 Successfully Launched</div>
-    <p>
-      HNK SSTORE is a trusted online store providing quality watches across Pakistan.
-      Every product is carefully checked before dispatch.
-    </p>
-    <p style="color:#e6c87b;letter-spacing:2px">
-      Products Available • Nationwide Delivery • Trusted Quality
-    </p>
+    <p>Trusted online store providing quality watches across Pakistan.</p>
+    <p style="color:#e6c87b;letter-spacing:2px">Nationwide Delivery • Trusted Quality</p>
   </div>
 </header>
 
-<!-- DAILY STYLING -->
+<!-- DAILY -->
 <section>
 <h2 class="section-title">Daily Styling Watches</h2>
 <div class="products">
   <div class="product">
-    <img src="AURA FOR KIDS.jfif">
+    <div class="media-frame"><img src="AURA FOR KIDS.jfif"></div>
     <h3>Aura Watch – White</h3>
     <div class="price">PKR 600</div>
     <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
   </div>
 
   <div class="product">
-    <img src="AURA WATCH ORIGNAL BLACK.webp">
+    <div class="media-frame"><img src="AURA WATCH ORIGNAL BLACK.webp"></div>
     <h3>Arabic Aura Watch Original Black</h3>
     <div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
     <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
@@ -279,30 +287,29 @@ footer{
 <!-- LUXURY -->
 <section>
 <h2 class="section-title">Luxury Watches</h2>
-
 <div class="products">
 
-<!-- PATEK -->
 <div class="product">
   <div class="luxury-slider">
-    <div class="luxury-slide"><img src="WATCH PPG.jpg"></div>
-    <div class="luxury-slide"><img src="PPG 02.jpg"></div>
-    <div class="luxury-slide"><img src="PPG BOX.jpg"></div>
-  </div>
-  <h3>Patek Philippe Nautilus</h3>
-  <div class="price"><del>PKR 4,000</del><br>PKR 3,499</div>
-  <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-</div>
 
-<!-- HUBLOT -->
-<div class="product">
-  <div class="luxury-slider">
-    <div class="luxury-slide"><img src="hublet 1.jpg"></div>
-    <div class="luxury-slide"><img src="hublet 2.jpg"></div>
-    <div class="luxury-slide"><img src="hublet3.jpg"></div>
-    <div class="luxury-slide"><img src="hublet 4.jpg"></div>
-    <div class="luxury-slide"><img src="hublet box post.jpg"></div>
+    <div class="luxury-slide">
+      <div class="media-frame"><img src="hublet 2.jpg"></div>
+    </div>
+
+    <div class="luxury-slide">
+      <div class="media-frame"><img src="hublet3.jpg"></div>
+    </div>
+
+    <!-- LAST: SIDE BY SIDE -->
+    <div class="luxury-slide">
+      <div class="dual-images">
+        <div class="media-frame"><img src="hublet 4.jpg"></div>
+        <div class="media-frame"><img src="hublet box post.jpg"></div>
+      </div>
+    </div>
+
   </div>
+
   <h3>Hublot Skeleton Premium Watch</h3>
   <div class="price">
     <del>PKR 5,000</del><br>
@@ -315,7 +322,7 @@ footer{
 </div>
 </section>
 
-<!-- PERFUMES -->
+<!-- PERFUME -->
 <section>
 <h2 class="section-title">Perfumes</h2>
 <div class="coming-soon">COMING SOON</div>
@@ -335,3 +342,5 @@ Remaining payment collected on delivery
 
 </body>
 </html>
+
+
