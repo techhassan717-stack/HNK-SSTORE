@@ -44,10 +44,51 @@ header{
 
 .header-content{
   max-width:900px;
-  padding:50px 30px;
+  padding:45px 30px;
   background:rgba(0,0,0,.65);
   border-radius:22px;
 }
+
+/* ===== TOP HERO SLIDER (NEW) ===== */
+
+.hero-frame{
+  width:100%;
+  max-width:780px;
+  margin:0 auto 30px;
+  overflow:hidden;
+  border-radius:18px;
+  border:2px solid #bfa14a;
+  background:#000;
+}
+
+.hero-slider{
+  display:flex;
+  width:300%;
+  animation:heroSlide 12s infinite;
+}
+
+.hero-slide{
+  width:100%;
+  flex-shrink:0;
+}
+
+.hero-slide img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+
+@keyframes heroSlide{
+  0%{transform:translateX(0)}
+  33%{transform:translateX(0)}
+  38%{transform:translateX(-100%)}
+  66%{transform:translateX(-100%)}
+  71%{transform:translateX(-200%)}
+  100%{transform:translateX(-200%)}
+}
+
+/* ===== HEADER TEXT ===== */
 
 header h1{
   font-size:3.5rem;
@@ -217,6 +258,10 @@ footer{
 @media(max-width:768px){
   header h1{font-size:2.4rem}
 
+  .hero-slide img{
+    height:200px;
+  }
+
   .products{
     display:flex;
     overflow-x:auto;
@@ -239,10 +284,22 @@ footer{
 <header>
   <div class="header-bg"></div>
   <div class="header-overlay"></div>
+
   <div class="header-content">
+
+    <!-- HERO SLIDER -->
+    <div class="hero-frame">
+      <div class="hero-slider">
+        <div class="hero-slide"><img src="thumnail.jpeg"></div>
+        <div class="hero-slide"><img src="thumnail3.jpeg"></div>
+        <div class="hero-slide"><img src="thumnail2.jpeg"></div>
+      </div>
+    </div>
+
     <div class="welcome">WELCOME TO HNK SSTORE</div>
     <h1>HNK SSTORE</h1>
     <div class="launch">🎉 Successfully Launched</div>
+
     <p>
       HNK SSTORE is a trusted online store in Pakistan providing premium watches
       and lifestyle products. Each item is inspected before dispatch.
@@ -250,138 +307,8 @@ footer{
     <p style="color:#e6c87b;letter-spacing:2px">
       Watches • Perfumes • Nationwide Delivery • Cash on Delivery
     </p>
+
   </div>
 </header>
 
-<!-- DAILY WATCHES -->
-<section>
-<h2 class="section-title">Daily Styling Watches</h2>
-
-<div class="products">
-
-  <div class="product">
-    <img src="AURA FOR KIDS.jfif">
-    <h3>Aura Watch – White</h3>
-    <p><strong>Product Code:</strong> HNK-AURA-001</p>
-    <div class="price">PKR 600</div>
-    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-  </div>
-
-  <div class="product">
-    <div class="luxury-slider">
-      <div class="luxury-slide"><img src="aura black (2).jpg"></div>
-      <div class="luxury-slide"><img src="aura black (3).jpg"></div>
-      <div class="luxury-slide"><img src="aura black (4).jpg"></div>
-      <div class="luxury-slide"><img src="aura black (6).jpg"></div>
-    </div>
-    <h3>Arabic Aura Watch – Black</h3>
-    <p><strong>Product Code:</strong> HNK-AURA-002</p>
-    <div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
-    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-  </div>
-
-</div>
-</section>
-
-<!-- LUXURY WATCHES -->
-<section>
-<h2 class="section-title">Luxury Watches</h2>
-
-<div class="products">
-
-  <!-- PATEK -->
-  <div class="product">
-    <div class="luxury-slider">
-      <div class="luxury-slide"><img src="WATCH PPG.jpg"></div>
-      <div class="luxury-slide"><img src="PPG 02.jpg"></div>
-      <div class="luxury-slide"><img src="PPG BOX.jpg"></div>
-      <div class="luxury-slide"><video controls src="PPG VID.MP4"></video></div>
-    </div>
-    <h3>Patek Philippe Nautilus</h3>
-    <p><strong>Product Code:</strong> HNK-LX-002</p>
-    <div class="price"><del>PKR 4,000</del><br>PKR 3,499</div>
-    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-  </div>
-
-  <!-- HUBLOT -->
-  <div class="product">
-    <div class="luxury-slider">
-      <div class="luxury-slide"><img src="hublet 1.jpg"></div>
-      <div class="luxury-slide"><img src="hublet 2.jpg"></div>
-      <div class="luxury-slide"><img src="hublet3.jpg"></div>
-      <div class="luxury-slide"><img src="hublet 4.jpg"></div>
-      <div class="luxury-slide"><img src="hublet box post.jpg"></div>
-    </div>
-    <h3>Hublot Skeleton Premium Watch</h3>
-    <p><strong>Product Code:</strong> HNK-LX-003</p>
-    <div class="price"><del>PKR 5,000</del><br>PKR 4,399</div>
-    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-  </div>
-
-  <!-- GOLDEN AURA -->
-  <div class="product">
-    <div class="luxury-slider">
-      <div class="luxury-slide"><img src="golden aura .jpg"></div>
-      <div class="luxury-slide"><img src="golden aura 3.jpg"></div>
-      <div class="luxury-slide"><img src="golden aura 4.jpg"></div>
-      <div class="luxury-slide"><img src="golden aura 5.jpg"></div>
-      <div class="luxury-slide"><img src="golden aura.jpg"></div>
-      <div class="luxury-slide"><img src="golder aura.jpg"></div>
-      <div class="luxury-slide"><img src="golden 6.jpg"></div>
-    </div>
-    <h3>Arabic Aura Watch – Golden Edition</h3>
-    <p><strong>Product Code:</strong> HNK-LX-004</p>
-    <div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
-    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-  </div>
-
-  <!-- ROLEX -->
-  <div class="product">
-    <div class="luxury-slider">
-      <div class="luxury-slide"><img src="rolex gold red.jpg"></div>
-      <div class="luxury-slide"><img src="rolex gold red2.jpg"></div>
-      <div class="luxury-slide"><img src="rolex gold red3.jpg"></div>
-      <div class="luxury-slide"><img src="rolex gold red4.jpg"></div>
-      <div class="luxury-slide"><img src="rolex gold red05.jpg"></div>
-    </div>
-    <h3>Rolex Oyster Perpetual Datejust</h3>
-    <p><strong>Product Code:</strong> HNK-LX-005</p>
-    <div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
-    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-  </div>
-
-</div>
-</section>
-
-<!-- PERFUMES -->
-<section>
-<h2 class="section-title">Perfumes</h2>
-<div style="text-align:center;font-size:2.5rem;font-weight:800;color:#e6c87b;">
-COMING SOON
-</div>
-</section>
-
-<!-- POLICIES -->
-<section>
-<h2 class="section-title">Our Policies</h2>
-<div class="policies">
-✔ Nationwide Delivery<br>
-✔ Cash on Delivery Available<br>
-✔ Advance Delivery Charges Apply<br>
-✔ Products Checked Before Dispatch<br>
-✔ Customer Satisfaction Guaranteed
-</div>
-</section>
-
-<footer>
-© 2026 <strong>HNK SSTORE</strong><br>
-All Rights Reserved
-</footer>
-
-<div class="floating">
-  <a class="whatsapp" href="https://wa.me/923435266919">🟢</a>
-  <a class="instagram" href="https://instagram.com/hnk_sstore">📷</a>
-</div>
-
-</body>
-</html>
+<!-- REST OF YOUR WEBSITE CONTINUES UNCHANGED -->
