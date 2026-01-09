@@ -60,7 +60,6 @@ header{
 
 .hero-track{
   display:flex;
-  width:300%;
   height:100%;
   transition:transform .6s ease-in-out;
 }
@@ -274,7 +273,6 @@ footer{
 
   <div class="header-content">
 
-    <!-- HERO SLIDER -->
     <div class="hero-slider">
       <div class="hero-track" id="heroTrack">
         <div class="hero-slide"><img src="thumnail.jpeg"></div>
@@ -422,12 +420,30 @@ All Rights Reserved
 </div>
 
 <script>
-let index=0;
-const track=document.getElementById("heroTrack");
-function update(){track.style.transform=`translateX(-${index*100}%)`;}
-function nextSlide(){index=(index+1)%3;update();}
-function prevSlide(){index=(index-1+3)%3;update();}
-setInterval(nextSlide,5000);
+let index = 0;
+const track = document.getElementById("heroTrack");
+const totalSlides = document.querySelectorAll(".hero-slide").length;
+
+function update(){
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  index = 0;
+  update();
+});
+
+function nextSlide(){
+  index = (index + 1) % totalSlides;
+  update();
+}
+
+function prevSlide(){
+  index = (index - 1 + totalSlides) % totalSlides;
+  update();
+}
+
+setInterval(nextSlide, 5000);
 </script>
 
 </body>
