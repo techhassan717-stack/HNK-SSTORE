@@ -205,6 +205,39 @@ section{
   justify-content:center;
 }
 
+/* ================= NEW: ORDER + REVIEWS ================= */
+.form-box{
+  background:#111;
+  padding:30px;
+  border-radius:20px;
+  max-width:600px;
+  margin:auto;
+}
+.form-box input,
+.form-box textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  border:none;
+}
+.form-box button{
+  width:100%;
+  padding:14px;
+  background:#e6c87b;
+  border:none;
+  font-weight:800;
+  border-radius:25px;
+  cursor:pointer;
+}
+.review{
+  background:#fff;
+  color:#000;
+  padding:15px;
+  border-radius:15px;
+  margin-top:10px;
+}
+
 /* ================= POLICIES ================= */
 .policies{
   text-align:center;
@@ -267,10 +300,15 @@ footer{
 
 <body>
 
+<!-- ORDER COUNTER -->
+<section>
+<h2 class="section-title">Total Orders Placed</h2>
+<div id="orderCount" style="text-align:center;font-size:3rem;color:#e6c87b;">0</div>
+</section>
+
 <header>
   <div class="header-bg"></div>
   <div class="header-overlay"></div>
-
   <div class="header-content">
 
     <div class="hero-slider">
@@ -325,7 +363,6 @@ footer{
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 
-<!-- 🔥 NEW PRODUCT (ONLY ADDITION) -->
 <div class="product">
 <div class="luxury-slider">
 <div class="luxury-slide"><img src="clyclr (1).jpg"></div>
@@ -407,6 +444,29 @@ footer{
 </div>
 </section>
 
+<!-- ORDER FORM -->
+<section>
+<h2 class="section-title">Place Your Order</h2>
+<div class="form-box">
+<input id="cname" placeholder="Your Name">
+<input id="cphone" placeholder="Phone Number">
+<input id="caddress" placeholder="Delivery Address">
+<input id="ccolor" placeholder="Watch Colour">
+<button onclick="placeOrder()">Confirm Order</button>
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+<h2 class="section-title">Reviews & Issues</h2>
+<div class="form-box">
+<input id="rname" placeholder="Your Name">
+<textarea id="rtext" placeholder="Write your review or issue..."></textarea>
+<button onclick="addReview()">Submit</button>
+</div>
+<div id="reviews"></div>
+</section>
+
 <section>
 <h2 class="section-title">Perfumes</h2>
 <div style="text-align:center;font-size:2.5rem;font-weight:800;color:#e6c87b;">COMING SOON</div>
@@ -434,6 +494,7 @@ All Rights Reserved
 </div>
 
 <script>
+/* HERO SLIDER */
 let index = 0;
 const track = document.getElementById("heroTrack");
 const totalSlides = document.querySelectorAll(".hero-slide").length;
@@ -441,23 +502,34 @@ const totalSlides = document.querySelectorAll(".hero-slide").length;
 function update(){
   track.style.transform = `translateX(-${index * 100}%)`;
 }
+function nextSlide(){ index=(index+1)%totalSlides; update(); }
+function prevSlide(){ index=(index-1+totalSlides)%totalSlides; update(); }
+setInterval(nextSlide,5000);
 
-document.addEventListener("DOMContentLoaded", () => {
-  index = 0;
-  update();
-});
+/* ORDER COUNTER */
+let count = localStorage.getItem("hnkOrders") || 0;
+document.getElementById("orderCount").innerText = count;
 
-function nextSlide(){
-  index = (index + 1) % totalSlides;
-  update();
+function placeOrder(){
+  if(!cname.value||!cphone.value||!caddress.value||!ccolor.value){
+    alert("Please fill all fields");
+    return;
+  }
+  count++;
+  localStorage.setItem("hnkOrders",count);
+  orderCount.innerText = count;
+  alert("Order placed successfully!");
 }
 
-function prevSlide(){
-  index = (index - 1 + totalSlides) % totalSlides;
-  update();
+/* REVIEWS */
+function addReview(){
+  if(!rtext.value) return;
+  const div=document.createElement("div");
+  div.className="review";
+  div.innerHTML=`<strong>${rname.value||"Customer"}:</strong><br>${rtext.value}`;
+  reviews.prepend(div);
+  rname.value=""; rtext.value="";
 }
-
-setInterval(nextSlide, 5000);
 </script>
 
 </body>
