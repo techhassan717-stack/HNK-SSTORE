@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,6 @@
 <title>HNK SSTORE | Watches & Perfumes</title>
 <meta name="description" content="HNK SSTORE – Trusted watch & perfume store in Pakistan. Nationwide delivery available.">
 
-<!-- HERO IMAGE PRELOAD -->
 <link rel="preload" as="image" href="thumnail.jpeg">
 <link rel="preload" as="image" href="thumnail2.jpeg">
 <link rel="preload" as="image" href="thumnail3.jpeg">
@@ -66,9 +68,6 @@ header{
 .hero-slide{
   width:100%;
   flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
 .hero-slide img{
   width:100%;
@@ -133,9 +132,7 @@ section{max-width:1200px;margin:auto;padding:90px 20px}
   text-align:center;
   box-shadow:0 18px 40px rgba(0,0,0,.25);
 }
-.product img,
-.luxury-slide img,
-.luxury-slide video{
+.product img, video{
   width:100%;
   height:260px;
   object-fit:contain;
@@ -143,27 +140,16 @@ section{max-width:1200px;margin:auto;padding:90px 20px}
   border-radius:15px;
   padding:10px;
 }
-.price{color:#bfa14a;font-weight:800;font-size:1.2rem}
-.order-btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:12px 26px;
-  background:#25D366;
-  color:#000;
-  text-decoration:none;
-  border-radius:25px;
-  font-weight:700;
-}
+.price del{color:#777;font-size:.95rem}
+.price span{color:#bfa14a;font-size:1.3rem;font-weight:800}
 
 /* SLIDER */
 .luxury-slider{
   display:flex;
   overflow-x:auto;
   gap:15px;
-  scroll-snap-type:x mandatory;
 }
-.luxury-slider::-webkit-scrollbar{display:none;}
-.luxury-slide{min-width:100%;scroll-snap-align:center}
+.luxury-slider::-webkit-scrollbar{display:none}
 
 /* FOOTER */
 footer{text-align:center;padding:40px;color:#bfa14a}
@@ -172,13 +158,22 @@ footer{text-align:center;padding:40px;color:#bfa14a}
 @media(max-width:768px){
   header h1{font-size:2.4rem}
   .hero-slider{height:220px}
-  .products{display:flex;overflow-x:auto;gap:20px}
+  .products{display:flex;overflow-x:auto}
   .product{min-width:85%}
 }
 </style>
 </head>
 
 <body>
+
+<!-- TRUST INTRO -->
+<section style="padding-top:40px;text-align:center">
+<h2 style="color:#e6c87b">Trusted Watch Store in Pakistan</h2>
+<p style="color:#ddd;max-width:900px;margin:auto;line-height:1.7">
+HNK SSTORE provides premium and daily-use watches with honest pricing, real images,
+and nationwide Cash on Delivery. What you see is exactly what you receive.
+</p>
+</section>
 
 <header>
 <div class="header-bg"></div>
@@ -187,19 +182,9 @@ footer{text-align:center;padding:40px;color:#bfa14a}
 <div class="header-content">
 <div class="hero-slider">
 <div class="hero-track" id="heroTrack">
-
-<div class="hero-slide">
-<img src="thumnail.jpeg" width="800" height="260" loading="eager" fetchpriority="high" decoding="async">
-</div>
-
-<div class="hero-slide">
-<img src="thumnail3.jpeg" width="800" height="260" loading="eager" fetchpriority="high" decoding="async">
-</div>
-
-<div class="hero-slide">
-<img src="thumnail2.jpeg" width="800" height="260" loading="eager" fetchpriority="high" decoding="async">
-</div>
-
+<div class="hero-slide"><img src="thumnail.jpeg" loading="eager"></div>
+<div class="hero-slide"><img src="thumnail3.jpeg" loading="eager"></div>
+<div class="hero-slide"><img src="thumnail2.jpeg" loading="eager"></div>
 </div>
 <button class="hero-btn left" onclick="prevSlide()">❮</button>
 <button class="hero-btn right" onclick="nextSlide()">❯</button>
@@ -217,31 +202,37 @@ footer{text-align:center;padding:40px;color:#bfa14a}
 <div class="products">
 
 <div class="product">
-<img src="AURA FOR KIDS.jfif" width="260" height="260" loading="lazy" decoding="async">
+<img src="AURA FOR KIDS.jfif" loading="lazy">
 <h3>Aura Watch – White</h3>
-<div class="price">PKR 600</div>
+<div class="price"><span>PKR 600</span></div>
 </div>
 
 <div class="product">
 <div class="luxury-slider">
-<img src="aura black (2).jpg" loading="lazy" decoding="async">
-<img src="aura black (3).jpg" loading="lazy" decoding="async">
-<img src="aura black (4).jpg" loading="lazy" decoding="async">
-<img src="aura black (6).jpg" loading="lazy" decoding="async">
+<img src="aura black (2).jpg">
+<img src="aura black (3).jpg">
+<img src="aura black (4).jpg">
+<img src="aura black (6).jpg">
 </div>
 <h3>Arabic Aura Watch – Black</h3>
-<div class="price">PKR 2,499</div>
+<div class="price">
+<del>PKR 3,000</del><br>
+<span>PKR 2,499</span>
+</div>
 </div>
 
 <div class="product">
 <div class="luxury-slider">
-<img src="clyclr (1).jpg" loading="lazy" decoding="async">
-<img src="clyclr (2).jpg" loading="lazy" decoding="async">
-<img src="clyclr (3).jpg" loading="lazy" decoding="async">
-<img src="clyclr (5).jpg" loading="lazy" decoding="async">
+<img src="clyclr (1).jpg">
+<img src="clyclr (2).jpg">
+<img src="clyclr (3).jpg">
+<img src="clyclr (5).jpg">
 </div>
 <h3>Rotating Rim Watch</h3>
-<div class="price">PKR 2,499</div>
+<div class="price">
+<del>PKR 3,000</del><br>
+<span>PKR 2,499</span>
+</div>
 </div>
 
 </div>
@@ -254,51 +245,63 @@ footer{text-align:center;padding:40px;color:#bfa14a}
 
 <div class="product">
 <div class="luxury-slider">
-<img src="WATCH PPG.jpg" loading="lazy" decoding="async">
-<img src="PPG 02.jpg" loading="lazy" decoding="async">
-<img src="PPG BOX.jpg" loading="lazy" decoding="async">
-<video controls loading="lazy" preload="none" src="PPG VID.MP4"></video>
+<img src="WATCH PPG.jpg">
+<img src="PPG 02.jpg">
+<img src="PPG BOX.jpg">
+<video controls src="PPG VID.MP4"></video>
 </div>
 <h3>Patek Philippe Nautilus</h3>
-<div class="price">PKR 3,499</div>
+<div class="price">
+<del>PKR 3,999</del><br>
+<span>PKR 3,499</span>
+</div>
 </div>
 
 <div class="product">
 <div class="luxury-slider">
-<img src="hublet 1.jpg" loading="lazy" decoding="async">
-<img src="hublet 2.jpg" loading="lazy" decoding="async">
-<img src="hublet3.jpg" loading="lazy" decoding="async">
-<img src="hublet 4.jpg" loading="lazy" decoding="async">
-<img src="hublet box post.jpg" loading="lazy" decoding="async">
+<img src="hublet 1.jpg">
+<img src="hublet 2.jpg">
+<img src="hublet3.jpg">
+<img src="hublet 4.jpg">
+<img src="hublet box post.jpg">
 </div>
 <h3>Hublot Skeleton Premium Watch</h3>
-<div class="price">PKR 4,399</div>
+<div class="price">
+<del>PKR 4,999</del><br>
+<span>PKR 4,399</span>
+</div>
 </div>
 
 <div class="product">
 <div class="luxury-slider">
-<img src="golden aura .jpg" loading="lazy" decoding="async">
-<img src="golden aura 3.jpg" loading="lazy" decoding="async">
-<img src="golden aura 4.jpg" loading="lazy" decoding="async">
-<img src="golden aura 5.jpg" loading="lazy" decoding="async">
-<img src="golden aura.jpg" loading="lazy" decoding="async">
-<img src="golder aura.jpg" loading="lazy" decoding="async">
-<img src="golden 6.jpg" loading="lazy" decoding="async">
+<img src="golden aura .jpg">
+<img src="golden aura 3.jpg">
+<img src="golden aura 4.jpg">
+<img src="golden aura 5.jpg">
+<img src="golden aura.jpg">
+<img src="golder aura.jpg">
+<img src="golden 6.jpg">
 </div>
 <h3>Arabic Aura Watch – Golden</h3>
-<div class="price">PKR 3,000</div>
+<div class="price">
+<del>PKR 3,500</del><br>
+<span>PKR 3,000</span>
+</div>
 </div>
 
 <div class="product">
 <div class="luxury-slider">
-<img src="rolex gold red.jpg" loading="lazy" decoding="async">
-<img src="rolex gold red2.jpg" loading="lazy" decoding="async">
-<img src="rolex gold red3.jpg" loading="lazy" decoding="async">
-<img src="rolex gold red4.jpg" loading="lazy" decoding="async">
-<img src="rolex gold red05.jpg" loading="lazy" decoding="async">
+<img src="rolex gold red.jpg">
+<img src="rolex gold red2.jpg">
+<img src="rolex gold red3.jpg">
+<img src="rolex gold red4.jpg">
+<img src="rolex gold red05.jpg">
 </div>
 <h3>Rolex Oyster Perpetual Datejust</h3>
-<div class="price">PKR 3,000</div>
+<div class="price">
+<del>PKR 3,500</del><br>
+<span>PKR 3,000</span>
+</div>
 </div>
 
 </div>
@@ -308,6 +311,18 @@ footer{text-align:center;padding:40px;color:#bfa14a}
 <section>
 <h2 class="section-title">Perfumes</h2>
 <div style="text-align:center;font-size:2.5rem;color:#e6c87b">COMING SOON</div>
+</section>
+
+<!-- POLICIES -->
+<section>
+<h2 class="section-title">Our Policies</h2>
+<div style="max-width:900px;margin:auto;line-height:1.8;color:#ddd">
+<p><strong>✔ Cash on Delivery:</strong> Available all over Pakistan</p>
+<p><strong>✔ Open Parcel:</strong> Check product before payment (where allowed)</p>
+<p><strong>✔ Original Product:</strong> Same as shown in images & videos</p>
+<p><strong>✔ Exchange:</strong> Only for damaged or wrong item</p>
+<p><strong>✔ Nationwide Delivery:</strong> Fast & secure shipping</p>
+</div>
 </section>
 
 <footer>© 2026 HNK SSTORE</footer>
