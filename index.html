@@ -29,6 +29,11 @@ nav.show{right:0}
 header h1{font-size:3.5rem;letter-spacing:6px;background:linear-gradient(90deg,#8a6b2f,#e6c87b,#bfa14a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .launch{display:inline-block;margin:15px 0;padding:10px 25px;border-radius:25px;background:linear-gradient(90deg,#e6c87b,#bfa14a);color:#000;font-weight:800}
 header p{margin-top:15px;line-height:1.8;color:#ddd}
+.ramzan-offer{margin-top:25px;padding:15px 25px;border-radius:25px;background:linear-gradient(90deg,#0f5132,#198754);color:#fff;font-weight:800;cursor:pointer;display:inline-block;text-decoration:none;transition:0.3s;animation:pulse 1.5s infinite}
+.ramzan-offer:hover{transform:scale(1.05)}
+.ramzan-arrow{display:block;font-size:26px;margin-top:8px;animation:arrowMove 1s infinite alternate}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(25,135,84,.7)}70%{box-shadow:0 0 0 15px rgba(25,135,84,0)}100%{box-shadow:0 0 0 0 rgba(25,135,84,0)}}
+@keyframes arrowMove{from{transform:translateY(0)}to{transform:translateY(8px)}}
 section{max-width:1200px;margin:auto;padding:90px 20px}
 .section-title{text-align:center;font-size:2.5rem;margin-bottom:20px;letter-spacing:3px;background:linear-gradient(90deg,#e6c87b,#bfa14a,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px}
@@ -80,6 +85,10 @@ header h1{font-size:2.4rem}
 <div class="launch">🎉 Successfully Launched</div>
 <p>HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products.</p>
 <p style="color:#e6c87b;letter-spacing:2px">Authentic Products • Quality Checked • Nationwide Delivery</p>
+<a href="ramzan-offer.html" class="ramzan-offer">
+🌙 RAMZAN SPECIAL DISCOUNT
+<span class="ramzan-arrow">⬇ Click Here ⬇</span>
+</a>
 </div>
 </header>
 
@@ -228,6 +237,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
